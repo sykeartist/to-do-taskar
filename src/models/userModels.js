@@ -10,7 +10,7 @@ const userSchema= new mongoose.Schema(
         address: String,
         age: Number,
         profilePicture: { type: String},
-        createdDate: { type: Date, defualt: Date.now},
+        createdDate: { type: Date, default: Date.now},
     },
     {
         versionKey: false

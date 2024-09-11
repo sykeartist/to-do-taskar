@@ -8,9 +8,10 @@ var jwt= require("jsonwebtoken")
 
 // userCreate
 
-exports.registration= async(req, res)=>{
+exports.registration= async (req, res)=>{
     try{
         const data= req.body
+        console.log("Data received", data)
         // data.email= req.body.email 
         const result= await usersModel.create(data)
         res.status(200).json({
