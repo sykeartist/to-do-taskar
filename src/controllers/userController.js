@@ -13,13 +13,13 @@ exports.registration= async(req, res)=>{
         const data= req.body
         // data.email= req.body.email 
         const result= await usersModel.create(data)
-        res.status(201).json({
+        res.status(200).json({
             status:"success",
             massage:" user created successfully", 
             data: result})
     }
     catch(error){
-        res. status(404).json({ 
+        res. status(200).json({ 
             status:'failed', 
             masssage: error.massage
         })
@@ -39,14 +39,14 @@ exports.logIn= async(req, res)=>{
         })
 
         if(!user){
-            return res.status(400).json ({
+            return res.status(200).json ({
                 status:'fail', 
                 message:'user not found'
             })
         }
         
         if(user.password !== reqBody.password){
-            return res.status(400).json({
+            return res.status(200).json({
                 status:'failed', 
                 message:'wrong password'
             })
@@ -76,7 +76,7 @@ exports.logIn= async(req, res)=>{
     }
 
     catch(error){
-        res.status(400).json({
+        res.status(200).json({
             status:'failed', 
             message:error.message
         })
@@ -99,7 +99,7 @@ exports.profileDetails= async (req, res)=>{
         })
     }
     catch(error){
-        res.status(400).json({
+        res.status(200).json({
             status:'failed', 
             message:error.message
         })
@@ -125,7 +125,7 @@ exports.profileUpdate= async(req, res)=>{
         })
     }
     catch(error){
-        res.status(400).json({
+        res.status(200).json({
             status:'failed',
             message: error.message
         })
@@ -153,7 +153,7 @@ exports.getAllUsers= async(req, res)=>{
         })
     }
     catch(error){
-        res. status(400).json ({
+        res. status(200).json ({
             status:'failed', 
             message: error.massage
         })
@@ -179,7 +179,7 @@ exports.upateUser= async (req, res)=>{
         })
     }
     catch(error){
-        res. status(400).json({
+        res. status(200).json({
             status:'failed', 
             message:error.message
         })
@@ -202,7 +202,7 @@ exports.deleteUser= async ( req, res)=>{
         })
     }
     catch(error){
-        res.status(400).json({ 
+        res.status(200).json({ 
             status:' failed', 
             message: error.message
         })
@@ -231,7 +231,7 @@ exports.emailVerify= async (req, res)=>{
         }
     }
     catch(error){
-        res.status(400).json({ 
+        res.status(200).json({ 
             status:' failed', 
             message: error.message
         })
@@ -303,7 +303,7 @@ exports.resetPassword= async (req, res)=>{
         }
     }
     catch(error){
-        res.status(400).json({ 
+        res.status(200).json({ 
             status:' failed', 
             message: error.message
         })

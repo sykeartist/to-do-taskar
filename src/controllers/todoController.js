@@ -16,7 +16,7 @@ exports.createTodo= async(req, res)=>{
         })
     }
     catch(error){
-        res.status(500).json({
+        res.status(200).json({
             status:'failed',
             data: error.message
         })
@@ -43,7 +43,7 @@ exports.updateTodo= async(req, res)=> {
         })
     }
     catch(error){
-        res.status(500).json({
+        res.status(200).json({
             status:'failed',
             data: error.message
         })
@@ -68,7 +68,7 @@ exports.deleteTodo= async(req, res)=>{
         })
     }
     catch(error){
-        res.status(500).json({
+        res.status(200).json({
             status:'failed',
             data: error.message
         })
@@ -102,7 +102,7 @@ exports.todoList= async (req, res)=>{
             data:result})
     }
     catch(error){
-        res.status(500).json({
+        res.status(200).json({
             status:'failed',
             data: error.message
         })
@@ -126,7 +126,7 @@ exports.todoCount= async(req,res)=>{
             data:result})
     }
     catch(error){
-        res.status(500).json({
+        res.status(200).json({
             status:'failed',
             data: error.message
         })
